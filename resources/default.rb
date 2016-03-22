@@ -58,7 +58,7 @@ attribute :totem_interface_ringnumber, kind_of: Integer, default: 0
 attribute :totem_interface_bindnetaddr, kind_of: String
 attribute :totem_interface_broadcast, equal_to: [:on, 'yes', :off, 'no']
 attribute :totem_interface_mcastaddr, kind_of: String
-attribute :totem_interface_mcastport, kind_of: Integer, default: 6543
+attribute :totem_interface_mcastport, kind_of: Integer
 attribute :totem_interface_ttl, kind_of: Integer, default: 1
 
 # Logging attributes

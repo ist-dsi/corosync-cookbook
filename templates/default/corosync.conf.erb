@@ -92,7 +92,9 @@ totem {
 		<% if @corosync.totem_interface_mcastaddr -%>
 		mcastaddr: <%= @corosync.totem_interface_mcastaddr %>
 		<% end -%>
+		<% if @corosync.totem_interface_mcastport -%>
                 mcastport: <%= @corosync.totem_interface_mcastport %>
+		<% end -%>
                 ttl: <%= @corosync.totem_interface_ttl %>
         }
 }
