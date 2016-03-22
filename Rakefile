@@ -3,7 +3,7 @@ require 'rubocop/rake_task'
 require 'foodcritic'
 require 'kitchen'
 
-# require_relative 'tasks/maintainers'
+require_relative 'tasks/maintainers'
 
 # Style tests. Rubocop and Foodcritic
 namespace :style do

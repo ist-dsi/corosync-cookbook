@@ -14,22 +14,22 @@ state_attrs :totem_version
 attribute :totem_version, kind_of: Integer, default: 2
 attribute :totem_crypto_cipher, equal_to: [:none, 'none', \
                                    :aes256, 'aes256', \
-								   :aes192, 'aes192', \
-								   :aes128, 'aes128', \
-								   :des, '3des'], default: :aes256
+				   :aes192, 'aes192', \
+				   :aes128, 'aes128', \
+				   :des, '3des'], default: :aes256
 attribute :totem_crypto_hash, equal_to: [:none, 'none', \
-			                       :md5, 'md5', \
-			                       :sha1, 'sha1', \
-								   :sha256, 'sha256', \
-								   :sha384, 'sha384', \
+		                       :md5, 'md5', \
+		                       :sha1, 'sha1', \
+		                    :sha256, 'sha256', \
+				   :sha384, 'sha384', \
                                    :sha512, 'sha512'], default: :sha1
 attribute :totem_secauth, equal_to: [:on, 'on', :off, 'off'], default: :on
-attribute :totem_transport, equal_to: [:udp, 'udp', :udpu, 'udpu', :iba, 'iba'], default: :udp
-attribute :totem_rrp_mode, equal_to: [:none, 'none', :active, 'active', :passive, 'passive'], default: :none
-attribute :totem_netmtu, kind_of: Integer, default: 1500
+attribute :totem_transport, equal_to: [:udp, 'udp', :udpu, 'udpu', :iba, 'iba']
+attribute :totem_rrp_mode, equal_to: [:none, 'none', :active, 'active', :passive, 'passive']
+attribute :totem_netmtu, kind_of: Integer
 attribute :totem_cluster_name, kind_of: String
-attribute :totem_config_version, kind_of: Integer, default: 0
-attribute :totem_ip_version, equal_to: [:ipv4, 'ipv4', :ipv6, 'ipv6'], default: :ipv4
+attribute :totem_config_version, kind_of: Integer
+attribute :totem_ip_version, equal_to: [:ipv4, 'ipv4', :ipv6, 'ipv6']
 attribute :totem_token, kind_of: Integer
 attribute :totem_token_coefficient, kind_of: Integer
 attribute :totem_token_retransmit, kind_of: Integer

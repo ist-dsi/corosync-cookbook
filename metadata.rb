@@ -1,7 +1,7 @@
 name 'corosync'
 maintainer 'Petr Belyaev'
 maintainer_email 'upcfrost@gmail.com'
-license 'all_rights'
+license 'GPLv3.0'
 description 'Installs/Configures Corosync'
 long_description 'Installs/Configures Corosync'
 version '0.1.0'
