@@ -118,7 +118,7 @@ logging {
 }
 
 nodelist {
-  <% @corosync.nodes.each do |n| -%>
+  <% @corosync.node_list.each do |n| -%>
     node {
       ring<%= n['ring'] %>_addr: <%= n['node_name'] %>
     }

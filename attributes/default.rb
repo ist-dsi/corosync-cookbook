@@ -7,10 +7,10 @@
 default['corosync']['conf_dir'] = '/etc/corosync'
 
 # Totem attributes
-default['corosync']['config']['totem']['version'] = nil
-default['corosync']['config']['totem']['crypto_cipher'] = nil
-default['corosync']['config']['totem']['crypto_hash'] = nil
-default['corosync']['config']['totem']['secauth'] = nil
+default['corosync']['config']['totem']['version'] = 2
+default['corosync']['config']['totem']['crypto_cipher'] = 'aes256'
+default['corosync']['config']['totem']['crypto_hash'] = 'sha1'
+default['corosync']['config']['totem']['secauth'] = 'on'
 default['corosync']['config']['totem']['transport'] = nil
 default['corosync']['config']['totem']['rrp_mode'] = nil
 default['corosync']['config']['totem']['netmtu'] = nil
@@ -40,36 +40,33 @@ default['corosync']['config']['totem']['rrp_problem_count_mcast_threshold'] = ni
 default['corosync']['config']['totem']['rrp_token_expired_timeout'] = nil
 default['corosync']['config']['totem']['rrp_autorecovery_check_timeout'] = nil
 # Totem interface attributes
-default['corosync']['config']['totem']['interface']['ringnumber'] = nil
+default['corosync']['config']['totem']['interface']['ringnumber'] = 0
 default['corosync']['config']['totem']['interface']['bindnetaddr'] = nil
 default['corosync']['config']['totem']['interface']['broadcast'] = nil
 default['corosync']['config']['totem']['interface']['mcastaddr'] = nil
 default['corosync']['config']['totem']['interface']['mcastport'] = nil
-default['corosync']['config']['totem']['interface']['ttl'] = nil
+default['corosync']['config']['totem']['interface']['ttl'] = 1
 
 # Logging attributes
-default['corosync']['config']['logging']['fileline'] = nil
-default['corosync']['config']['logging']['timestamp'] = nil
-default['corosync']['config']['logging']['function_name'] = nil
-default['corosync']['config']['logging']['to_logfile'] = nil
-default['corosync']['config']['logging']['to_syslog'] = nil
-default['corosync']['config']['logging']['to_stderr'] = nil
-default['corosync']['config']['logging']['logfile'] = nil
-default['corosync']['config']['logging']['logfile_priority'] = nil
-default['corosync']['config']['logging']['syslog_facility'] = nil
-default['corosync']['config']['logging']['syslog_priority'] = nil
-default['corosync']['config']['logging']['debug'] = nil
-default['corosync']['config']['logging']['logger_subsys']['subsys'] = nil
-default['corosync']['config']['logging']['logger_subsys']['debug'] = nil
+default['corosync']['config']['logging']['fileline'] = 'off'
+default['corosync']['config']['logging']['timestamp'] = 'on'
+default['corosync']['config']['logging']['function_name'] = 'off'
+default['corosync']['config']['logging']['to_logfile'] = 'on'
+default['corosync']['config']['logging']['to_syslog'] = 'on'
+default['corosync']['config']['logging']['to_stderr'] = 'off'
+default['corosync']['config']['logging']['logfile'] = '/var/log/cluster/corosync.log'
+default['corosync']['config']['logging']['logfile_priority'] = 'info'
+default['corosync']['config']['logging']['syslog_facility'] = 'daemon'
+default['corosync']['config']['logging']['syslog_priority'] = 'info'
+default['corosync']['config']['logging']['debug'] = 'off'
+default['corosync']['config']['logging']['logger_subsys']['subsys'] = 'QUORUM'
+default['corosync']['config']['logging']['logger_subsys']['debug'] = 'off'
 
-# Node list attributes
-default['corosync']['config']['nodelist']['node']['ring_num'] = nil
-default['corosync']['config']['nodelist']['node']['ring_addr'] = nil
-default['corosync']['config']['nodelist']['node']['nodeid'] = nil
-default['corosync']['config']['nodelist']['node']['ipc_type'] = nil
+# Node list
+default['corosync']['config']['node_list'] = []
 
 # Quorum attributes
-default['corosync']['config']['quorum']['provider'] = nil
+default['corosync']['config']['quorum']['provider'] = 'corosync_votequorum'
 default['corosync']['config']['quorum']['expected_votes'] = nil
 default['corosync']['config']['quorum']['two_node'] = nil
 default['corosync']['config']['quorum']['wait_for_all'] = nil
