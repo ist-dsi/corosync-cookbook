@@ -11,4 +11,3 @@ depends 'hostsfile'
 
 supports 'redhat', '>= 7.1'
 supports 'centos', '>= 7.1'
-

@@ -13,16 +13,16 @@ state_attrs :totem_version
 # Totem attributes
 attribute :totem_version, kind_of: Integer
 attribute :totem_crypto_cipher, equal_to: [:none, 'none', \
-                                   :aes256, 'aes256', \
-				   :aes192, 'aes192', \
-				   :aes128, 'aes128', \
-				   :des, '3des']
+                                           :aes256, 'aes256', \
+                                           :aes192, 'aes192', \
+                                           :aes128, 'aes128', \
+                                           :des, '3des']
 attribute :totem_crypto_hash, equal_to: [:none, 'none', \
-		                       :md5, 'md5', \
-		                       :sha1, 'sha1', \
-		                    :sha256, 'sha256', \
-				   :sha384, 'sha384', \
-                                   :sha512, 'sha512']
+                                         :md5, 'md5', \
+                                         :sha1, 'sha1', \
+                                         :sha256, 'sha256', \
+                                         :sha384, 'sha384', \
+                                         :sha512, 'sha512']
 attribute :totem_secauth, equal_to: [:on, 'on', :off, 'off']
 attribute :totem_transport, equal_to: [:udp, 'udp', :udpu, 'udpu', :iba, 'iba']
 attribute :totem_rrp_mode, equal_to: [:none, 'none', :active, 'active', :passive, 'passive']
@@ -72,29 +72,29 @@ attribute :log_logfile, kind_of: String
 attribute :log_debug, equal_to: [:on, 'on', :off, 'off']
 attribute :log_logfile_priority, equal_to: [:alert, 'alert', \
                                             :crit, 'crit', \
-				    						:debug, 'debig', \
-			    							:emerg, 'emerg', \
-		    								:err, 'err', \
-	    									:info, 'info', \
-    										:notice, 'notice', \
-								    		:warning, 'warning']
+                                            :debug, 'debig', \
+                                            :emerg, 'emerg', \
+                                            :err, 'err', \
+                                            :info, 'info', \
+                                            :notice, 'notice', \
+                                            :warning, 'warning']
 attribute :log_syslog_facility, equal_to: [:daemon, 'daemon', \
-                            	           :local0, 'local0', \
-										   :local1, 'local1', \
-										   :local2, 'local2', \
-										   :local3, 'local3', \
-										   :local4, 'local4', \
-										   :local5, 'local5', \
-										   :local6, 'local6', \
-										   :local7, 'local7']
+                                           :local0, 'local0', \
+                                           :local1, 'local1', \
+                                           :local2, 'local2', \
+                                           :local3, 'local3', \
+                                           :local4, 'local4', \
+                                           :local5, 'local5', \
+                                           :local6, 'local6', \
+                                           :local7, 'local7']
 attribute :log_syslog_priority, equal_to: [:alert, 'alert', \
                                            :crit, 'crit', \
-					    				   :debug, 'debig', \
-				    					   :emerg, 'emerg', \
-			    						   :err, 'err', \
-										   :info, 'info', \
-										   :notice, 'notice', \
-										   :warning, 'warning']
+                                           :debug, 'debig', \
+                                           :emerg, 'emerg', \
+                                           :err, 'err', \
+                                           :info, 'info', \
+                                           :notice, 'notice', \
+                                           :warning, 'warning']
 attribute :log_logger_subsys, kind_of: String
 attribute :log_logger_subsys_debug, equal_to: [:on, 'on', :off, 'off']
 
