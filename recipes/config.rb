@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: corosync
-# Recipe:: config_example
+# Recipe:: config
 #
 # Copyright 2016, Petr Belyaev <upcfrost@gmail.com>
 #

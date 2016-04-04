@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: corosync
-# Resource:: corosync_config
+# Resource:: corosync_default
 #
 # Copyright 2016, Petr Belyaev <upcfrost@gmail.com>
 #
