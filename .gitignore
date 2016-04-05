@@ -15,6 +15,3 @@ Berksfile.lock
 Gemfile.lock
 bin/*
 .bundle/*
-
-# Corosync key file
-files/default/corosync-authkey
