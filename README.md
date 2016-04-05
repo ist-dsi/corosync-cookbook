@@ -31,7 +31,10 @@ Resources
 The default resource to configure the Corosync.
 
 ####Properties
-- `totem_version` - Integer. Specifies the version of the configuration file.  
+The following list contains only some of the properties.
+For other options please see the `corosync.conf.5` manual and the ```resources/default.rb``` file.
+
+- `totem_version` - Integer. Specifies the version of the configuration file.
               Currently the only valid version for this directive is 2.
 - `totem_crypto_cipher` - This specifies which  cipher  should  be  used  to  encrypt  all
               messages.   Valid  values  are  none  (no  encryption),  aes256,
@@ -74,8 +77,6 @@ The default resource to configure the Corosync.
               engaging this mechanism in lossy  networks  could  cause  faulty
               loss  declaration  as  the  mechanism  relies on the network for
               heartbeating.
-For other options please see the `corosync.conf.5` manual and the ```resources/default.rb``` file.
-
 
 Usage
 -----
