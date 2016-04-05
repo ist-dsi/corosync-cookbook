@@ -5,6 +5,7 @@
 # Copyright 2016, Petr Belyaev <upcfrost@gmail.com>
 
 default['corosync']['conf_dir'] = '/etc/corosync'
+default['corosync']['key_file'] = nil
 
 # Totem attributes
 default['corosync']['config']['totem']['version'] = 2

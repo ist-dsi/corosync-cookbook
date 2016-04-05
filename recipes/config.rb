@@ -11,11 +11,21 @@ directory node['corosync']['conf_dir'] do
   action :create
 end
 
-# FIXME: warning, using insecure key generation method
-execute 'Create authkeys file' do
-  command 'corosync-keygen -l'
-  sensitive true
-  creates '/etc/corosync/authkey'
+if node['corosync']['key_file']
+  cookbook_file 'corosync-authkey' do
+    owner     'root'
+    group     'root'
+    mode      0400
+    sensitive true
+    source    node['corosync']['key_file']
+    action    :create
+  end
+else
+  execute 'Create authkeys file' do
+    command 'corosync-keygen -l'
+    sensitive true
+    creates '/etc/corosync/authkey'
+  end
 end
 
 # Fix hosts file
