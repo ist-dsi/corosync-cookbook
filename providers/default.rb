@@ -15,7 +15,7 @@ action :create do
 
   # Copy or create the key file
   if node['corosync']['key_file']
-    cookbook_file 'corosync-authkey' do
+    cookbook_file "#{node['corosync']['conf_dir']}/authkey" do
       owner     'root'
       group     'root'
       mode      0400
@@ -27,7 +27,7 @@ action :create do
     execute 'Create authkeys file' do
       command 'corosync-keygen -l'
       sensitive true
-      creates '/etc/corosync/authkey'
+      creates "#{node['corosync']['conf_dir']}/authkey"
     end
   end
 
