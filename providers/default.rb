@@ -6,9 +6,13 @@
 #
 
 action :create do
+  # Create cluster user
+  user 'hacluster' do
+  end
+
   # Create config directory
   directory node['corosync']['conf_dir'] do
-    owner 'root'
+    owner 'hacluster'
     mode '0755'
     action :create
   end
@@ -16,7 +20,7 @@ action :create do
   # Copy or create the key file
   if node['corosync']['key_file']
     cookbook_file "#{node['corosync']['conf_dir']}/authkey" do
-      owner     'root'
+      owner     'hacluster'
       group     'root'
       mode      0400
       sensitive true
@@ -46,6 +50,11 @@ action :create do
       comment 'Update by Chef'
       action :create_if_missing
     end
+  end
+
+  # Set config dir ownership to this user
+  execute 'Set corosync confdir owner' do
+    command "chown hacluster #{node['corosync']['conf_dir']} -R"
   end
 
   # Create a service, will be started upon the config file creation
