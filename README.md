@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/upcFrost/chef_corosync_cookbook.svg?branch=master)](https://travis-ci.org/upcFrost/chef_corosync_cookbook)
+
 Corosync Cookbook
 =================
 
