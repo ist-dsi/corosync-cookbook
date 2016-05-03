@@ -1,0 +1,2 @@
+corosync 'config' do
+end

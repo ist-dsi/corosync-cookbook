@@ -5,6 +5,7 @@
 # Copyright 2016, Petr Belyaev <upcfrost@gmail.com>
 #
 
+actions :create
 default_action :create
 
 # Corosync.conf directives

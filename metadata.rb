@@ -6,6 +6,7 @@ description 'Installs/Configures Corosync'
 long_description 'Installs/Configures Corosync'
 version '0.1.0'
 source_url 'https://github.com/upcFrost/chef_corosync_cookbook'
+issues_url 'https://github.com/upcFrost/chef_corosync_cookbook/issues'
 
 depends 'hostsfile'
 

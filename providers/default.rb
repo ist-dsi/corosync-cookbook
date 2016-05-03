@@ -4,6 +4,7 @@
 #
 # Copyright 2016, Petr Belyaev <upcfrost@gmail.com>
 #
+use_inline_resources
 
 action :create do
   # Create cluster user
