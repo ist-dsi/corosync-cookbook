@@ -32,4 +32,16 @@ describe 'test::corosync_default' do
       expect(chef_run).to enable_service('corosync')
     end
   end
+
+  context 'Given key file' do
+    let(:chef_run) do
+      ChefSpec::ServerRunner.new(step_into: 'corosync') do |node|
+        node.set['corosync']['key_file'] = 'authkey'
+      end.converge(described_recipe)
+    end
+
+    it 'should copy the file to the config dir' do
+      expect(chef_run).to create_cookbook_file('/etc/corosync/authkey')
+    end
+  end
 end
