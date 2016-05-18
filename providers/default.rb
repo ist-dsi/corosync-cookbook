@@ -9,6 +9,8 @@ use_inline_resources
 action :create do
   # Create cluster user
   user 'hacluster' do
+    gid 'haclient'
+    shell '/sbin/nologin'
   end
 
   # Create config directory
