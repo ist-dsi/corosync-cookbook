@@ -9,6 +9,7 @@ source_url 'https://github.com/upcFrost/chef_corosync_cookbook'
 issues_url 'https://github.com/upcFrost/chef_corosync_cookbook/issues'
 
 depends 'hostsfile'
+depends 'poise-service'
 
 supports 'redhat', '>= 7.1'
 supports 'centos', '>= 7.1'

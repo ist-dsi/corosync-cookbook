@@ -8,9 +8,8 @@ use_inline_resources
 
 action :create do
   # Create cluster user
-  user 'hacluster' do
-    gid 'haclient'
-    shell '/sbin/nologin'
+  poise_service_user 'hacluster' do
+    group 'haclient'
   end
 
   # Create config directory
@@ -25,7 +24,7 @@ action :create do
     cookbook_file "#{node['corosync']['conf_dir']}/authkey" do
       owner     'hacluster'
       group     'root'
-      mode      0400
+      mode      0o400
       sensitive true
       source    node['corosync']['key_file']
       action    :create
@@ -60,12 +59,6 @@ action :create do
     command "chown hacluster #{node['corosync']['conf_dir']} -R"
   end
 
-  # Create a service, will be started upon the config file creation
-  service 'corosync' do
-    supports restart: true, status: true
-    action :enable
-  end
-
   # Create a conf file
   template "#{node['corosync']['conf_dir']}/corosync.conf" do
     cookbook 'corosync'
@@ -73,7 +66,13 @@ action :create do
     mode '644'
     owner 'root'
     group 'root'
-    notifies :restart, 'service[corosync]'
     variables corosync: new_resource
+  end
+
+  # Create a service, will be started upon the config file creation
+  poise_service 'corosync' do
+    command 'corosync start'
+    user 'hacluster'
+    options :systemd, after_target: 'network-online'
   end
 end
