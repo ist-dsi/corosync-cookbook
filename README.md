@@ -8,8 +8,11 @@ Installs and configures Corosync Cluster Engine.
 Requirements
 ------------
 #### Platforms
-- Debian/Ubuntu
-- RHEL/CentOS
+- Debian 8
+- Ubuntu >= 14.04
+- RHEL/CentOS >= 6
+- openSUSE >= 13.1
+- SLE 12/12.1
 
 #### Chef
 - Chef 11+

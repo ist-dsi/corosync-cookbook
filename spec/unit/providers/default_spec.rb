@@ -13,7 +13,7 @@ describe 'test::corosync_default' do
     end
 
     it 'should create user hacluster' do
-      expect(chef_run).to create_user('hacluster')
+      expect(chef_run).to create_poise_service_user('hacluster')
     end
 
     it 'should generate keyfile by itself' do
@@ -29,7 +29,7 @@ describe 'test::corosync_default' do
     end
 
     it 'should enable corosync service' do
-      expect(chef_run).to enable_service('corosync')
+      expect(chef_run).to enable_poise_service('corosync')
     end
 
     it 'should create a config template' do
