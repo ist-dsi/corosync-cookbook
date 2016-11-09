@@ -3,7 +3,7 @@ maintainer 'Petr Belyaev'
 maintainer_email 'upcfrost@gmail.com'
 license 'GPLv3.0'
 description 'Installs/Configures Corosync'
-long_description 'Installs/Configures Corosync'
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '0.1.0'
 source_url 'https://github.com/upcFrost/chef_corosync_cookbook'
 issues_url 'https://github.com/upcFrost/chef_corosync_cookbook/issues'

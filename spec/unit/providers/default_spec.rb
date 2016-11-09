@@ -31,6 +31,10 @@ describe 'test::corosync_default' do
     it 'should enable corosync service' do
       expect(chef_run).to enable_service('corosync')
     end
+
+    it 'should create a config template' do
+      expect(chef_run).to create_template('/etc/corosync/corosync.conf')
+    end
   end
 
   context 'Given key file' do
@@ -40,8 +44,11 @@ describe 'test::corosync_default' do
       end.converge(described_recipe)
     end
 
-    it 'should copy the file to the config dir' do
+    it 'should copy the file to the config dir instead of generating the keyfile' do
       expect(chef_run).to create_cookbook_file('/etc/corosync/authkey')
+        .with(mode: 0400)
+        .with(source: chef_run.node['corosync']['key_file'])
+      expect(chef_run).not_to run_execute('Create authkeys file')
     end
   end
 end
