@@ -1,6 +1,8 @@
 ---
 driver:
   name: vagrant
+  customize:
+    memory: 1024
 
 provisioner:
   name: chef_zero
@@ -11,18 +13,21 @@ provisioner:
 #   name: inspec
 
 platforms:
-  - name: centos-6.7
-  - name: centos-7.1
-  - name: debian-7.8
-    run_list: apt::default
-  - name: debian-8.1
-    run_list: apt::default
-  - name: fedora-21
-  - name: fedora-22
-  - name: ubuntu-12.04
-    run_list: apt::default
-  - name: ubuntu-14.04
-    run_list: apt::default
+  - name: centos-7
+    driver:
+      box: bento/centos-7.3
+    run_list:
+    - recipe[selinux::disabled]
+  - name: ubuntu-16.04
+    driver:
+      box: bento/ubuntu-16.04
+  - name: ubuntu-18.04
+    driver:
+      box: bento/ubuntu-18.04
+  - name: debian-9
+    driver:
+      box: bento/debian-9.0
+
 
 suites:
   - name: default
