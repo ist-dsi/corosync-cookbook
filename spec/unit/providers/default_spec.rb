@@ -9,7 +9,7 @@ require 'spec_helper'
 describe 'test::corosync_default' do
   context 'Using the default options' do
     let(:chef_run) do
-      ChefSpec::ServerRunner.new(step_into: 'corosync').converge(described_recipe)
+      ChefSpec::ServerRunner.new(step_into: 'corosync', platform: 'debian', version: '9.6').converge(described_recipe)
     end
 
     it 'should create user hacluster' do
