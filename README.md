@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/ist-dsi/corosync-cookbook.svg?branch=master)](https://travis-ci.com/ist-dsi/corosync-cookbook)
+[![Build Status](https://travis-ci.org/ist-dsi/corosync-cookbook.svg?branch=master)](https://travis-ci.org/ist-dsi/corosync-cookbook)
 
 Corosync Cookbook
 =================
@@ -8,15 +8,18 @@ Installs and configures Corosync Cluster Engine.
 Requirements
 ------------
 #### Platforms
-- Debian 8
+- Debian 9
 - Ubuntu >= 14.04
-- RHEL/CentOS >= 6
+- RHEL/CentOS >= 7
 
 #### Chef
 - Chef 11+
 
 #### Cookbooks
 - hostsfile
+- yum
+- selinux
+- yum-epel
 
 Recipes
 -------
