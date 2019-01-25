@@ -7,8 +7,5 @@ RSpec.configure do |c|
   c.tty = true
   c.formatter = :documentation
   # log level
-  c.log_level = :fatal
-  # Test platform
-  c.platform = 'centos'
-  c.version = '7.0'
+  c.log_level = :error
 end
