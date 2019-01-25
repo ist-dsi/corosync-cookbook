@@ -12,10 +12,9 @@ chef_version '>= 12.19'
 source_url 'https://github.com/upcFrost/chef_corosync_cookbook'
 issues_url 'https://github.com/upcFrost/chef_corosync_cookbook/issues'
 
-depends 'hostsfile'
-depends 'poise-service'
-depends 'yum'
-depends 'apt'
+%w( apt yum yum-epel poise-service hostsfile selinux).each do |dep|
+  depends dep
+end
 
 supports 'centos', '>= 7.0'
 supports 'ubuntu', '>= 14.04'

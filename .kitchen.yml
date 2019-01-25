@@ -15,7 +15,7 @@ provisioner:
 platforms:
   - name: centos-7
     driver:
-      box: bento/centos-7.3
+      box: centos/7
     run_list:
     - recipe[selinux::disabled]
   - name: ubuntu-16.04
@@ -26,7 +26,7 @@ platforms:
       box: bento/ubuntu-18.04
   - name: debian-9
     driver:
-      box: bento/debian-9.0
+      box: debian/stretch64
 
 
 suites:
