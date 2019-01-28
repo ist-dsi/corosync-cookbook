@@ -6,4 +6,4 @@
 #
 
 # Install package
-package 'corosync'
+package %w(corosync pcs)
