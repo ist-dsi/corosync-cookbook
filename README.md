@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/ist-dsi/corosync-cookbook.svg?branch=master)](https://travis-ci.org/ist-dsi/corosync-cookbook)
-
+[![Cookbook Version](https://img.shields.io/cookbook/v/corosync-cookbook.svg)](https://supermarket.chef.io/cookbooks/corosync-cookbook)
 Corosync-cookbook
 =================
 
