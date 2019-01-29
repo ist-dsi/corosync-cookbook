@@ -137,7 +137,7 @@ action :create do
     cookbook_file "#{node['corosync']['conf_dir']}/authkey" do
       owner     'hacluster'
       group     'root'
-      mode      0o400
+      mode      0400
       sensitive true
       source    node['corosync']['key_file']
       action    :create
@@ -181,7 +181,7 @@ action :create do
 
   # Create a conf file
   template "#{node['corosync']['conf_dir']}/corosync.conf" do
-    cookbook 'corosync'
+    cookbook 'corosync-cookbook'
     source 'corosync.conf.erb'
     mode '644'
     owner 'root'
@@ -201,10 +201,4 @@ action :create do
     supports status: true, restart: true
     action :enable
   end
-
-  # poise_service 'corosync' do
-  # command '/usr/sbin/corosync -f start'
-  # user 'hacluster'
-  # options :systemd, after_target: 'network-online'
-  # end
 end

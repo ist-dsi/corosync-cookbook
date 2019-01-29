@@ -6,7 +6,7 @@
 
 require 'spec_helper'
 
-describe 'test::corosync_default' do
+describe 'test::default' do
   context 'Using the default options' do
     let(:chef_run) do
       ChefSpec::ServerRunner.new(step_into: 'corosync', platform: 'debian', version: '9.6').converge(described_recipe)
@@ -29,7 +29,7 @@ describe 'test::corosync_default' do
     end
 
     it 'should enable corosync service' do
-      expect(chef_run).to enable_poise_service('corosync')
+      expect(chef_run).to enable_service('corosync')
     end
 
     it 'should create a config template' do
@@ -40,7 +40,7 @@ describe 'test::corosync_default' do
   context 'Given key file' do
     let(:chef_run) do
       ChefSpec::ServerRunner.new(step_into: 'corosync') do |node|
-        node.set['corosync']['key_file'] = 'authkey'
+        node.normal['corosync']['key_file'] = 'authkey'
       end.converge(described_recipe)
     end
 

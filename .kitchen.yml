@@ -30,7 +30,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[corosync::default]
+      - recipe[corosync-cookbook::default]
       - recipe[test::default]
     attributes:
     verifier:

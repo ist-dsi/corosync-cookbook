@@ -1,7 +1,9 @@
 [![Build Status](https://travis-ci.org/ist-dsi/corosync-cookbook.svg?branch=master)](https://travis-ci.org/ist-dsi/corosync-cookbook)
 
-Corosync Cookbook
+Corosync-cookbook
 =================
+
+This cookbook is a fork of [belyaevp corosync cookbook](https://supermarket.chef.io/cookbooks/corosync)
 
 Installs and configures Corosync Cluster Engine.
 
@@ -9,17 +11,17 @@ Requirements
 ------------
 #### Platforms
 - Debian 9
-- Ubuntu >= 14.04
+- Ubuntu >= 16.04
 - RHEL/CentOS >= 7
 
 #### Chef
-- Chef 11+
+- Chef 12.19+
 
-#### Cookbooks
-- hostsfile
-- yum
-- selinux
-- yum-epel
+#### Dependencies
+* [hostsfile](https://supermarket.chef.io/cookbooks/hostsfile) 
+* [yum](https://supermarket.chef.io/cookbooks/yum)
+* [selinux](https://supermarket.chef.io/cookbooks/selinux)
+* [yum-epel](https://supermarket.chef.io/cookbooks/yum-epel)
 
 Recipes
 -------
@@ -130,3 +132,8 @@ corosync 'config' do
   action :create
 end
 ```
+
+### Authors
+
+* Author:: Simão Silva      <simao.silva@tecnico.ulisboa.pt>
+* Author:: Petr Belyaev      <upcfrost@gmail.com>
