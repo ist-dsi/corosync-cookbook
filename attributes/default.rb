@@ -7,6 +7,9 @@
 default['corosync']['conf_dir'] = '/etc/corosync'
 default['corosync']['key_file'] = nil
 
+default['corosync']['vault'] = nil
+default['corosync']['vault_item'] = nil
+
 # Totem attributes
 default['corosync']['config']['totem']['version'] = 2
 default['corosync']['config']['totem']['crypto_cipher'] = 'aes256'

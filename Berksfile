@@ -7,4 +7,7 @@ cookbook 'yum-epel', '~> 3.3.0'
 cookbook 'selinux', '~> 2.1.1'
 cookbook 'poise-service', '~> 1.5.2'
 cookbook 'hostsfile', '~> 3.0.1'
-cookbook 'test', path: 'test/cookbooks/test'
+
+group :integration do
+    cookbook 'test', path: 'test/cookbooks/test'
+end

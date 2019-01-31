@@ -115,6 +115,8 @@ property :quorum_auto_tie_breaker_node, [String, nil], default: node['corosync']
 property :quorum_allow_downscale, [Integer, nil], default: node['corosync']['config']['quorum']['allow_downscale']
 property :quorum_expected_votes_tracking, [Integer, nil], default: node['corosync']['config']['quorum']['expected_votes_tracking']
 
+property :vault, [String, nil]
+
 action :create do
   # Create cluster user
   poise_service_user 'hacluster' do
@@ -142,6 +144,8 @@ action :create do
       source    node['corosync']['key_file']
       action    :create
     end
+  elsif node['corosync']['vault']
+    # todo download authkey to every machine
   else
     execute 'Create authkeys file' do
       command 'corosync-keygen -l'
