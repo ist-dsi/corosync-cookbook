@@ -1,5 +1,4 @@
 name 'corosync-cookbook'
-# estamos em processo de querido mudei a casa
 maintainer 'Simão Silva'
 maintainer_email 'simao.silva@tecnico.ulisboa.p'
 license 'GPL-3.0-only'
