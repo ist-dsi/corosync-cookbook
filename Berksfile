@@ -9,5 +9,5 @@ cookbook 'poise-service', '~> 1.5.2'
 cookbook 'hostsfile', '~> 3.0.1'
 
 group :integration do
-    cookbook 'test', path: 'test/cookbooks/test'
+  cookbook 'test', path: 'test/cookbooks/test'
 end

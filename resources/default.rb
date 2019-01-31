@@ -145,7 +145,7 @@ action :create do
       action    :create
     end
   elsif node['corosync']['vault']
-    # todo download authkey to every machine
+    # TODO: download authkey to every machine
   else
     execute 'Create authkeys file' do
       command 'corosync-keygen -l'
