@@ -5,7 +5,7 @@ license 'GPL-3.0-only'
 
 description 'Installs/Configures Corosync'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.2.2'
+version '0.2.3'
 
 chef_version '>= 12.19'
 
@@ -20,8 +20,5 @@ end
   supports el, '>= 7.0'
 end
 
-%w( 16.04 18.04 ).each do |ver|
-  supports 'ubuntu', ">=#{ver}"
-end
-
+supports 'ubuntu', '>=16.04'
 supports 'debian', '>= 9.0'

@@ -1,7 +1,6 @@
 name             'test'
 maintainer       'Simão Silva'
 maintainer_email 'simao.silva@tecnico.ulisboa.pt'
-license          'All rights reserved'
 description      'For testing corosync-cookbook'
 long_description 'For testing corosync-cookbook'
 license 'GPL-3.0-only'
@@ -17,8 +16,5 @@ issues_url 'https://github.com/ist-dsi/corosync-cookbook/issues' if respond_to?(
   supports el, '>= 7.0'
 end
 
-%w( 16.04 18.04 ).each do |ver|
-  supports 'ubuntu', ">=#{ver}"
-end
-
+supports 'ubuntu', '>=16.04'
 supports 'debian', '>= 9.0'
