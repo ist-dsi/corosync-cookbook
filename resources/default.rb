@@ -25,7 +25,7 @@ property :totem_crypto_hash, equal_to: [:none, 'none', \
                                         :sha384, 'sha384', \
                                         :sha512, 'sha512'], default: node['corosync']['config']['totem']['crypto_hash']
 property :totem_secauth, equal_to: [:on, 'on', :off, 'off'], default: node['corosync']['config']['totem']['secauth']
-property :totem_transport, equal_to: [:udp, 'udp', :udpu, 'udpu', :iba, 'iba'], default: node['corosync']['config']['totem']['transport']
+property :totem_transport, equal_to: [:udp, 'udp', :udpu, 'udpu', :iba, 'iba', :knet,'knet'], default: node['corosync']['config']['totem']['transport']
 property :totem_rrp_mode, equal_to: [:none, 'none', :active, 'active', :passive, 'passive'], default: node['corosync']['config']['totem']['rrp_mode']
 property :totem_netmtu,   [Integer, nil], default: node['corosync']['config']['totem']['netmtu']
 property :totem_cluster_name, [String, nil], default: node['corosync']['config']['totem']['cluster_name']
